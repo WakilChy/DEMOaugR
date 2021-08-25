@@ -1,0 +1,287 @@
+Class 11 Notes
+
+Locators
+
+	id 
+	name
+	className - direct locators
+
+	xpath
+	css  - expression
+			Syntax- matching node
+
+	linktext
+	partiallinkText - only for links
+
+	tagname
+		Working with multiple elements
+
+
+All method calls will do a freshness check to ensure that the element reference is still valid.This essentially determines whether or not the element is still attached to the DOM. If this testfails, then an StaleElementReferenceException is thrown, and allfuture calls to this instance will fail.
+
+Exceptions from Selenium 
+StaleElementReferenceException- Click method
+NoSuchElementException- When selenium is not able to find on web page
+
+//*[@id='welcome-menu']/ul/li[2]/a
+//*[@id='menu_admin_viewAdminModule']/b
+//*[@id="post-body-4615304122771162527"]/div[1]/div/ul/li[5]/a
+
+
+
+
+<a href="/index.php/auth/requestPasswordResetCode">Forgot your password?</a>
+
+
+selectByVisibleText- First Choice
+selectByValue- Second Choice- 
+selectByIndex- Third Choice- very dynamic
+
+
+==================================== Class 12====================================================
+
+
+Wakil
+	1000
+
+	Florida
+		 100
+
+		 Street 5
+		 		10
+		 			Choudhary
+		 					1-2
+
+
+Syntax
+	XPath
+		/Parent	
+
+		
+		Abs
+		/Wakil/Florida/Street5/Choudhary/MamunFriend
+
+		Relative
+		//a
+		//img
+
+		Single
+		//input[@id='txtUsername']
+		//input[@name='txtUsername']
+		//input[@value='LOGIN']
+
+		Multiple Attribute
+		//input[@id='txtUsername' and @name='txtUsername']
+		//input[@id='txtUsername' or @name='mamun']
+
+
+		Contains
+		//input[contains(@id,'Login')]
+		//input[contains(@id,'SearchValues')]
+		//a[contains(@href,'PasswordReset')]
+
+		text method
+		//tagname[text()='text value']
+
+		//a[text()='Forgot your password?']
+		//b[text()='Dashboard']
+
+		Contains method with text
+		//tagname[contains(text(),'text value')]
+		//a[contains(text(),'Welcome')]
+
+		Combination
+		Abs+Rela
+
+		//table[@class='quickLaungeContainer']//a/img
+		//table[@class='quickLaungeContainer']//a/span
+		//table[@class='quickLaungeContainer']//span
+		//table[@class='quickLaungeContainer']//img
+
+		//a[text()='Aatmaram']//following::a
+		//a[text()='Aatmaram']//preceding::a
+
+		//a[text()='Aatmaram']//preceding::input[1] 
+		//a[text()='Mamun']//preceding::input[1] 
+		
+		User role
+		//a[text()='Aatmaram']//following::td[1]
+		
+		Emp Name
+		//a[text()='Aatmaram']//following::td[2]
+		
+		Status
+		//a[text()='Aatmaram']//following::td[3]
+
+
+		//*[text()='User Role']//following::select[1]
+		//*[text()='Employee Name']//following::input[1]
+		//*[text()='Username']//following::input[1]
+		//*[text()='Status']//following::select[1]
+
+		Login
+		Create user with admin
+		Logout
+		Login with new user
+		Verify admin tab is present
+		Logout
+		Login with admin
+		Search new users
+		select user
+		Click delete
+		Search the same user
+		It should not be present in table
+		logout
+
+
+
+	CSS
+
+		# is for id
+		#txtUsername 
+		#txtPassword
+		.button
+
+		. is for class
+		.button
+
+
+		input[name='Submit']
+
+
+	 	Wakil Florida Street5 Choudhary MamunFriend
+		Wakil > Florida >Street5>Choudhary>MamunFriend
+
+ 		a
+		img
+
+		input[id='txtUsername']
+		input[name='txtUsername']
+		input[value='LOGIN']
+		a[href*='PasswordReset']
+
+	
+Timeout
+		implicitlyWait
+			Global wait
+				It applies to all element
+				Polling until element or timeout expire
+				polling frequency is 250ms
+				It has be after get method
+				Do not add this wait multiple times
+
+
+		pageLoadTimeout
+			It will keep on waiting for page load till specified time if it does not load
+			it will throw exception
+			Applied to complete session
+			It has be added before get method
+			Do not add this wait multiple times
+
+
+		setScriptTimeout
+
+			Sets the amount of time to wait for an asynchronous script to finish execution beforethrowing an error. If the timeout is negative, then the script will be allowed to runindefinitely.
+
+
+ ========================================================================================================
+
+ 				Class 13
+
+ 	Explicit wait- Most of the time
+ 	FluentWait- Syntax
+
+
+Exception
+	Any abnormal condition
+		Checked Exception
+			compiletime exception
+
+		UnChecked exception 
+			Runtime exception
+
+Exception is a class, every exception parent class is Exception and Exception parent class is Throwable
+
+Throwable parent class is Object
+
+try catch- Only way
+throw
+throws
+
+Exception Handling- process where you can handle the exception and terminate code gracefully
+
+Selenium
+		Start Browser
+			login
+			add to card
+			payment
+		Close Browser
+
+NumberMisMatch
+	Int
+	Int
+
+	Int
+
+
+try
+{
+	
+}
+catch(ArthimaticException e)
+{
+	
+}
+// rest of code will work
+
+can u write a small program which will check server health 24/7
+
+hit one url > status code > 200 > checking
+							500 > failed > send email
+
+
+		while
+		hit the api> capture the response > assert
+		for sending email- apache email commons lib
+
+Link for Email API
+	https://commons.apache.org/proper/commons-email/userguide.html
+
+Video Link
+	https://www.youtube.com/watch?v=qGq9K85mGyA
+
+
+Write min 5 exception in Java
+Write min 5 exception in Selenium
+
+5 Category
+
+1XX
+
+2XX
+	200
+
+3XX
+	301
+
+4XX
+	404
+	
+5XX
+	500
+
+As of now focus on 200 Pass
+				   500 Failed
+
+How to do in Java
+	
+	Third party lib
+			RestAssured
+	
+	By default
+		Apache HTTPClient
+			Make any request
+			Get any response		
+
+
+
